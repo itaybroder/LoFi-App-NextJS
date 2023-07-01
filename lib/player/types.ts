@@ -7,8 +7,8 @@ export type AudioState = {
 export type Track = {
   id: string
   url: string
-  title: string
-  artist: Artist
+  name: string
+  artist: string
 }
 
 export type State = AudioState & {
@@ -21,12 +21,12 @@ export type Playlist = {
   id: string
   title: string
   imageUrl: string
-  tracks: Track[]
+  songs: Track[]
 }
 
 export type Artist = {
   id: string
   name: string
   imageUrl: string
-  tracks: Track[]
+  songs: Track[]
 }

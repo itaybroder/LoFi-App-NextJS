@@ -7,7 +7,7 @@ type LogoProps = {
 function Logo({ theme }: LogoProps) {
   return (
     <img
-      src={theme === 'dark' ? 'http://localhost:3000/logo-dark.png' : 'logo-light.png'}
+      src={theme === 'dark' ? 'https://res.cloudinary.com/dfimrgkuh/image/upload/v1688235718/logo-dark_o1kewy.png' : 'logo-light.png'}
       alt="Logo"
       width={170}
       height={190}
