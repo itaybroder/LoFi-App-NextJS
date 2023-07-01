@@ -37,7 +37,6 @@ const Layout: React.FC<Layoutprops> = (props) => {
 
   return (
     <>
-      <ApolloProvider client={client}>
         <ThemeProvider>
           <Navigation />
           <AudioSetup />
@@ -49,7 +48,6 @@ const Layout: React.FC<Layoutprops> = (props) => {
             <Player />
           </div>
         </ThemeProvider>
-      </ApolloProvider>
     </>
   )
 }

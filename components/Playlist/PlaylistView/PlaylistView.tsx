@@ -6,12 +6,12 @@ import player, { usePlayerState } from '@lib/player'
 import { Playlist, Track } from '@lib/player/types'
 import Link from 'next/link'
 
-export interface props {
-  playlist: Playlist
-  className?: string
+export interface Props {
+  playlist: Playlist;
+  className?: string;
 }
 
-const PlaylistView: React.FC<props> = (props) => {
+const PlaylistView: React.FC<Props> = (props) => {
   const { playlist, className, children, ...rest } = props
 
   const state = usePlayerState()
@@ -66,13 +66,13 @@ const PlaylistView: React.FC<props> = (props) => {
           changePlaylist={() => handlePlay()}
         />
         <div className="flex flex-col gap-6">
-          {playlist.tracks.map((track: Track, index: number) => (
+          {playlist.songs.map((song, index: number) => (
             <TrackCard
               onClick={() => handlePlay(index)}
               playlistId={playlist.id}
-              title={track.title}
-              fileUrl={track.url}
-              artist={track.artist.name}
+              title={song.name}
+              fileUrl={song.url} // Make sure song has a url property
+              artist={song.artist}
               key={index}
               index={index}
             />

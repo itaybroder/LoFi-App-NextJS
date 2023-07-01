@@ -20,7 +20,6 @@ function ThemeSelect() {
         <RadioItem value="blue" variant="blue"></RadioItem>
         <RadioItem value="violet" variant="violet"></RadioItem>
         <RadioItem value="pink" variant="pink"></RadioItem>
-        <RadioItem value="white" variant="white"></RadioItem>
         <RadioItem value="spotify" variant="spotify"></RadioItem>
       </RadioGroup.Root>
     </form>

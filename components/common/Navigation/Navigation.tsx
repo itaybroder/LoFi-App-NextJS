@@ -16,17 +16,8 @@ function Navigation() {
           <NavigationMenu.Link>
             <Link href="/">
               <a>
-                <Logo></Logo>
+                <Logo theme={s.theme_btn ? 'dark' : 'light'}></Logo>
               </a>
-            </Link>
-          </NavigationMenu.Link>
-        </NavigationMenu.Item>
-        <NavigationMenu.Item>
-          <NavigationMenu.Link>
-            <Link href="https://github.com/AchrafGarai/LoFi-App-NextJS">
-              <Button variant="naked">
-                <GithubIcon></GithubIcon>
-              </Button>
             </Link>
           </NavigationMenu.Link>
         </NavigationMenu.Item>

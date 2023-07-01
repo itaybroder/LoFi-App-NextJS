@@ -45,13 +45,13 @@ const createPlayer = () => {
       return
     }
 
-    const lastIndex = state.playlist.tracks.length - 1
+    const lastIndex = state.playlist.songs.length - 1
     const newIndex = state.currentTrackIndex + 1
 
     if (newIndex <= lastIndex) {
       setState({
         currentTrackIndex: newIndex,
-        currentTrack: state.playlist.tracks[newIndex],
+        currentTrack: state.playlist.songs[newIndex],
       })
 
       changeTrack()
@@ -79,14 +79,14 @@ const createPlayer = () => {
       // Added  tracks to Playlist
       setState({ playlist })
       state.currentTrackIndex = index
-      state.currentTrack = playlist.tracks[index]
+      state.currentTrack = playlist.songs[index]
       changeTrack()
     },
 
     playTrack(trackIndex: number) {
       setState({
         currentTrackIndex: trackIndex,
-        currentTrack: state.playlist.tracks[trackIndex],
+        currentTrack: state.playlist.songs[trackIndex],
       })
 
       changeTrack()
@@ -103,7 +103,7 @@ const createPlayer = () => {
 
       if (newIndex >= 0) {
         setState({
-          currentTrack: state.playlist.tracks[newIndex],
+          currentTrack: state.playlist.songs[newIndex],
           currentTrackIndex: newIndex,
         })
 
