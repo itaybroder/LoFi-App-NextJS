@@ -64,7 +64,7 @@ export const createAudio = () => {
     setInitialState(e: HTMLAudioElement) {
       element = e
       setup()
-      pubsub.publish('ready')
+      pubsub.publish('ready', null)
     },
 
     getCurrentTime() {
