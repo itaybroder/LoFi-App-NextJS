@@ -49,8 +49,8 @@ const Cover: React.FC<props> = (props) => {
               src={coverUrl}
             />
             <div className={cn(s.info)}>
-              <p className={cn(s.title)}>{currentTrack.title}</p>
-              <p className={cn(s.artist)}>{currentTrack.artist?.name}</p>
+              <p className={cn(s.title)}>{currentTrack.name}</p>
+              <p className={cn(s.artist)}>{currentTrack.artist}</p>
             </div>
           </div>
           <div className="block md:hidden mr-4">
