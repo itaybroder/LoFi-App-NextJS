@@ -11,7 +11,7 @@ const createPlayer = () => {
     id: '',
     title: '',
     imageUrl: '',
-    tracks: [],
+    songs: [],
   }
 
   let state: State = {
