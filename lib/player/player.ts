@@ -46,16 +46,18 @@ const createPlayer = () => {
     }
 
     const lastIndex = state.playlist.songs.length - 1
-    const newIndex = state.currentTrackIndex + 1
+    let newIndex = state.currentTrackIndex + 1
 
-    if (newIndex <= lastIndex) {
-      setState({
-        currentTrackIndex: newIndex,
-        currentTrack: state.playlist.songs[newIndex],
-      })
-
-      changeTrack()
+    if (newIndex > lastIndex) {
+      newIndex = 0
     }
+
+    setState({
+      currentTrackIndex: newIndex,
+      currentTrack: state.playlist.songs[newIndex],
+    })
+
+    changeTrack()
   }
 
   audio.onEnded(next)

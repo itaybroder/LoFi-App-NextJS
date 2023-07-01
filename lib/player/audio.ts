@@ -60,10 +60,13 @@ export const createAudio = () => {
     getState() {
       return state
     },
+
     setInitialState(e: HTMLAudioElement) {
       element = e
       setup()
+      pubsub.publish('ready')
     },
+
     getCurrentTime() {
       return currentTime
     },
@@ -94,11 +97,29 @@ export const createAudio = () => {
     },
 
     onEnded(listener: () => void) {
-      if (element) {
+      const attachListener = () => {
         element.addEventListener('ended', listener)
+
+        return () => element.removeEventListener('ended', listener)
       }
 
-      return () => element.removeEventListener('ended', listener)
+      if (element) {
+        return attachListener()
+      } else {
+        // Store the listener to be attached after 'element' is defined
+        let detach: () => void
+        const unsubscribe = pubsub.subscribe('ready', () => {
+          detach = attachListener()
+          unsubscribe()
+        })
+
+        return () => {
+          unsubscribe()
+          if (detach) {
+            detach()
+          }
+        }
+      }
     },
   }
 }
